@@ -29,6 +29,9 @@ spec:
       - image: $DOCKER_IMAGE
         imagePullPolicy: Always
         name: sensor-relay-container
+        env:
+        - name: MQTT_HOST
+          value: $MQTT_HOST
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
